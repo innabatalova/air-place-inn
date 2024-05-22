@@ -17,15 +17,3 @@
 .Title {
   color: #2196f3;
 }
-
-.FormControl {
-  align-items: center;
-}
-
-.TextField {
-  width: 30em;
-
-  @media screen and (max-width: 576px) {
-    width: 100%;
-  }
-}

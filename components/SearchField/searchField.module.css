@@ -1,0 +1,7 @@
+.TextField {
+  width: 30em;
+
+  @media screen and (max-width: 576px) {
+    width: 100%;
+  }
+}

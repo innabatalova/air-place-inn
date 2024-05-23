@@ -1,3 +1,9 @@
+export type IInn = {
+  params: {
+    inn: string
+  }
+}
+
 export type IData = {
   suggestions: IBank[]
 }

@@ -13,7 +13,7 @@ import styles from './searchField.module.css'
 
 const SearchField: FC = () => {
   const router = useRouter()
-  
+
   const [showClearIcon, setShowClearIcon] = useState<string>("none")
   const [clearField, setClearField] = useState<string>("")
   const [valid, setValid] = useState<boolean>(true)

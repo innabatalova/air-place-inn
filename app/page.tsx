@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { FormControl, Typography } from "@mui/material"
+import { Typography } from "@mui/material"
 
 import SearchField from "@/components/SearchField/page"
 

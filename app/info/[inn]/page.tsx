@@ -1,6 +1,9 @@
 import React from "react"
 
-import { IInn, IData, IBank } from './types'
+import {
+  IInn, IData, IBank, Address, Data,
+  Metro, Management, Name, Opf, State
+} from './types'
 
 import ErrorPage from "@/components/ErrorPage/page";
 
@@ -28,15 +31,33 @@ async function getData(inn: string): Promise<IData> {
   return res.json()
 }
 
+async function sortValues(arr: IBank[]) {
+  const arrValues: string[] = []
+
+  const getString = (data: IBank | Address | Data |
+    Metro | Management | Name | Opf | State): string[] =>
+    data instanceof Object ? Object.values(data).flatMap(getString) : [data]
+
+  arr.forEach((element: IBank) => {
+    getString(element).filter(item => item != null).forEach((el: string) => {
+      arrValues.push(el)
+    })
+  })
+
+  return arrValues
+}
+
 export default async function Inn({ params }: IInn) {
   const data = await getData(params.inn)
 
   if (data.suggestions.length === 0) { return (<ErrorPage />) }
 
+  const dataArray = await sortValues(data.suggestions)
+
   return (
     <div>
-      {data.suggestions.map((item: IBank, index: number) => (
-        <div key={index}>{item.value}</div>
+      {dataArray.map((item: string, index: number) => (
+        <div key={index}>{item}</div>
       ))}
     </div>
   )

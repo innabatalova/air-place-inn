@@ -53,14 +53,14 @@ export type IBankData = {
   employee_count: string,
 }
 
-type Address = {
+export type Address = {
   value: string,
   unrestricted_value: string,
   invalidity: string,
   data: Data,
 }
 
-type Data = {
+export type Data = {
   postal_code: string,
   country: string,
   country_iso_code: string,
@@ -161,19 +161,19 @@ type Data = {
   qc: string,
 }
 
-type Metro = {
+export type Metro = {
   name: string,
   line: string,
   distance: number,
 }
 
-type Management = {
+export type Management = {
   name: string,
   post: string,
   disqualified: string,
 }
 
-type Name = {
+export type Name = {
   full_with_opf: string,
   short_with_opf: string,
   latin: string,
@@ -181,14 +181,14 @@ type Name = {
   short: string,
 }
 
-type Opf = {
+export type Opf = {
   type: string,
   code: string,
   full: string,
   short: string,
 }
 
-type State = {
+export type State = {
   status: string,
   code: string,
   actuality_date: number,
